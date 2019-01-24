@@ -10,7 +10,12 @@ class EmailParser
   end
 
   def parse
-    if @unformatted_emails.
+    if @unformatted_emails.include?(",")
+      formatted_emails = @unformatted_emails.split(",")
+    else
+      formatted_emails = @unformatted_emails.split(" ")
+    end
+    formatted_emails
   end
 
 end
